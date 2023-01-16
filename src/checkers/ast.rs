@@ -1230,6 +1230,9 @@ where
                         self.current_stmt_parent().map(|parent| parent.0),
                     );
                 }
+                if self.settings.enabled.contains(&RuleCode::SIM114) {
+                    flake8_simplify::rules::combine_or_conditionals(self, stmt);
+                }
                 if self.settings.enabled.contains(&RuleCode::SIM401) {
                     flake8_simplify::rules::use_dict_get_with_default(
                         self, stmt, test, body, orelse,

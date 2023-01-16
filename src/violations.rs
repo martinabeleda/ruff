@@ -2785,6 +2785,19 @@ impl Violation for NestedIfStatements {
 }
 
 define_violation!(
+    pub struct CombineOrConditionals;
+);
+impl Violation for CombineOrConditionals {
+    fn message(&self) -> String {
+        "Combine conditionals via a logical `or` to prevent duplicate code".to_string()
+    }
+
+    fn placeholder() -> Self {
+        CombineOrConditionals
+    }
+}
+
+define_violation!(
     pub struct ReturnBoolConditionDirectly(pub String);
 );
 impl AlwaysAutofixableViolation for ReturnBoolConditionDirectly {

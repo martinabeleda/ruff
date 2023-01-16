@@ -233,6 +233,35 @@ fn compare_expr(expr1: &ComparableExpr, expr2: &ComparableExpr) -> bool {
     expr1.eq(expr2)
 }
 
+/// SIM114
+pub fn combine_or_conditionals(checker: &mut Checker, stmt: &Stmt) {
+    let StmtKind::If { test, body, orelse } = &stmt.node else {
+        return;
+    };
+    
+    let mut pairs = vec![(test, body)];
+    while orelse.len() == 1 {
+        let StmtKind::If { test, body, orelse } = &orelse[0].node else {
+            continue;
+        };
+        pairs.push((test, body))
+    }
+    println!("pairs: {:?}", pairs);
+
+    // let error_pairs = Vec::new();
+    // for i in 0..(pairs.len() - 1) {
+    //     let if_body_1 = pairs[i];
+    //     let if_body_2 = pairs[i + 1];
+    // }
+}
+
+fn is_body_same(body1: &Vec<Stmt>, body2: &Vec<Stmt>) -> bool {
+    if body1.len() != body2.len() {
+        return false;
+    }
+    return true;
+}
+
 /// SIM401
 pub fn use_dict_get_with_default(
     checker: &mut Checker,

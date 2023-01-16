@@ -22,6 +22,7 @@ mod tests {
     #[test_case(RuleCode::SIM110, Path::new("SIM110.py"); "SIM110")]
     #[test_case(RuleCode::SIM111, Path::new("SIM111.py"); "SIM111")]
     #[test_case(RuleCode::SIM112, Path::new("SIM112.py"); "SIM112")]
+    #[test_case(RuleCode::SIM114, Path::new("SIM114.py"); "SIM114")]
     #[test_case(RuleCode::SIM115, Path::new("SIM115.py"); "SIM115")]
     #[test_case(RuleCode::SIM117, Path::new("SIM117.py"); "SIM117")]
     #[test_case(RuleCode::SIM118, Path::new("SIM118.py"); "SIM118")]

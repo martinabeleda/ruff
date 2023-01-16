@@ -295,7 +295,6 @@ define_rule_mapping!(
     YTT302 => violations::SysVersionCmpStr10,
     YTT303 => violations::SysVersionSlice1Referenced,
     // flake8-simplify
-    SIM115 => violations::OpenFileWithContextHandler,
     SIM101 => violations::DuplicateIsinstanceCall,
     SIM102 => violations::NestedIfStatements,
     SIM103 => violations::ReturnBoolConditionDirectly,
@@ -306,6 +305,8 @@ define_rule_mapping!(
     SIM110 => violations::ConvertLoopToAny,
     SIM111 => violations::ConvertLoopToAll,
     SIM112 => violations::UseCapitalEnvironmentVariables,
+    SIM114 => violations::CombineOrConditionals,
+    SIM115 => violations::OpenFileWithContextHandler,
     SIM117 => violations::MultipleWithStatements,
     SIM118 => violations::KeyInDict,
     SIM201 => violations::NegateEqualOp,
